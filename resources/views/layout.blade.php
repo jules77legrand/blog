@@ -2,32 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ecole Superieure d'Einstein<section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image:url(images/bg_1.jpg);">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-md-6 ftco-animate">
-            <h1 class="mb-4">Au service de l'éducation</h1>
-            <p>"L'imagination est plus importante que le savoir." A.Einstein.</p>
-           
-          </div>
-        </div>
-        </div>
-     
-      <div class="slider-item" style="background-image:url(images/bg_2.jpg);">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-md-6 ftco-animate">
-            <h1 class="mb-4">Une formation de qualité</h1>
-            <p>"Un problème sans solution est un problème mal posé." A.Einstein</p>
-            
-          </div>
-        </div>
-        </div>
-      </div>
-    </section></title>
+    <title>Ecole Superieure d'Einstein</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
@@ -49,7 +24,7 @@
     <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-     <!-- Custom styles for this template -->
+     
      <link href="{{asset('css/all.css')}}" rel="stylesheet" />
 
 
@@ -61,22 +36,7 @@
     			<div class="col-md-4 d-flex align-items-center py-4">
     				<a class="navbar-brand" href="index.html">ESE<span>ECOLE</span></a>
     			</div>
-	    		<div class="col-lg-8 d-block">
-		    		<div class="row d-flex">
-					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-					    	<div class="text">
-					    		<span>Email</span>
-						    	<span>Info@ese.edu.sn</span>
-						    </div>
-					    </div>
-					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <div class="text">
-						    	<span>Appel</span>
-						    	<span>Nous Appelez: +221 33 888 88 88</span>
-						    </div>
-					    </div>
+	    		
 					    <div class="col-md topper d-flex align-items-center justify-content-end">
 					    	<p class="mb-0">
 					    		
@@ -92,7 +52,7 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
-	      <form action="#" class="searchform order-lg-last">
+	      <form action="/recherche" method="GET"  class="searchform order-lg-last">
           <div class="form-group d-flex">
             <input type="text" class="form-control pl-3" placeholder="Recherche">
             <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
@@ -101,11 +61,43 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item active"><a href={{route('accueil.index')}} class="nav-link pl-0">Accueil</a></li>
-	        	<li class="nav-item"><a href={{route('apropos.about')}} class="nav-link">A Propos</a></li>
-	        	<li class="nav-item"><a href={{route('formation')}} class="nav-link">Formation</a></li>
-	        	<li class="nav-item"><a href={{route('Professeur')}} class="nav-link">Professeur</a></li>
-	        	<li class="nav-item"><a href={{route('Blog')}} class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href={{route('Contact')}} class="nav-link">Contact</a></li>
+	        	<li class="nav-item"><a href="{{route('admission')}}" class="nav-link">Admission</a></li>
+	        	<li class="nav-item"><a href="{{route('formation')}}" class="nav-link">Formation</a></li>
+	        	<li class="nav-item"><a href="{{route('Professeur')}}" class="nav-link">Professeur</a></li>
+	        	<li class="nav-item"><a href="{{route('Blog')}} "class="nav-link">Etudiant</a></li>
+
+	          <li class="nav-item">
+            <!------------------------------------------fomulair--------------->
+            
+            @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Connexion</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">Inscription</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Deconnexion
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+            <a href="{{route('Contact')}}" class="nav-link"></a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -137,17 +129,17 @@
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2">Blog Recent</h2>
+              <h2 class="ftco-heading-2">Le blog Recent</h2>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url({{asset('images/bg_1.jpg')}});"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="#">Nous avons un destin qui s'appelle la reussite</a></h3>
+                  <h3 class="heading"><a href={{route('Blog')}}>Nous avons un destin qui s'appelle la reussite</a></h3>
                 </div>
               </div>
               <div class="block-21 mb-5 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url({{asset('images/bg_2.jpg')}});"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="#">Ensemble pour acquerir plus de connaissances</a></h3>
+                  <h3 class="heading"><a href={{route('Blog')}}>Ensemble pour acquerir plus de connaissances</a></h3>
                   
                 </div>
               </div>
@@ -158,7 +150,7 @@
               <h2 class="ftco-heading-2">Liaison rapide</h2>
               <ul class="list-unstyled">
                 <li><a href={{route('accueil.index')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Accueil</a></li>
-                <li><a href={{route('apropos.about')}}><span class="ion-ios-arrow-round-forward mr-2"></span>A Propos</a></li>
+                <li><a href={{route('admission')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Admission</a></li>
                 <li><a href={{route('Professeur')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Professeur</a></li>
                 <li><a href={{route('formation')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Formations</a></li>
                 <li><a href={{route('Contact')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
@@ -171,7 +163,8 @@
               <form action="#" class="subscribe-form">
                 <div class="form-group">
                   <input type="text" class="form-control mb-2 text-center" placeholder="Enter votre adresse email">
-                  <input type="submit" value="Souscrire" class="form-control submit px-3">
+                  <a href="/login" class="btn form-control submit px-3">Se connecter</a>
+                  
                 </div>
               </form>
             </div>
@@ -181,16 +174,16 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Conçu. <i class="icon-heart" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank">Souleymane NGOM</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Conçu. <i class="icon-heart" aria-hidden="true"></i>  <a href="#" target="_blank">Souleymane NGOM</a>
+
           </div>
         </div>
       </div>
     </footer>
     
   
-<!-- loader -->
+
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 

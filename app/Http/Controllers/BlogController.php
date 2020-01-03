@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+
+
+
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
     public function index()
     {
-        return view('/Blog/etudiant');
+        return view('/Blog/bloc');
     }
     public function show()
     {
-        return view('/Blog/etudiant');
+        return view('/Blog/bloc');
     }
 }

@@ -1,34 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ecole Supérieure d'Einstein<section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image:url(images/bg_1.jpg);">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-md-6 ftco-animate">
-            <h1 class="mb-4">Au service de l'éducation</h1>
-            <p>"Un problème sans solution est un problème mal posé.",Albert Einstein</p>
-           
-          </div>
-        </div>
-        </div>
-      </div>
-	  </div>
-      
-      <div class="slider-item" style="background-image:url(images/bg_2.jpg);">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-md-6 ftco-animate">
-            <h1 class="mb-4">Une formation de qualité</h1>
-            <p>"L'éducation est l'arme la plus puissante pour déveloper le monde" Nelson Mandela</p>
-            
-          </div>
-        </div>
-        </div>
-      </div>
-    </section></title>
+    <title>Ecole Supérieure d'Einstein</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
@@ -62,22 +35,7 @@
     			<div class="col-md-4 d-flex align-items-center py-4">
     				<a class="navbar-brand" href="index.html">ESE<span>ECOLE</span></a>
     			</div>
-	    		<div class="col-lg-8 d-block">
-		    		<div class="row d-flex">
-					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-					    	<div class="text">
-					    		<span>Email</span>
-						    	<span>Info@ese.edu.sn</span>
-						    </div>
-					    </div>
-					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <div class="text">
-						    	<span>Appel</span>
-						    	<span>Nous Appelez: +221 33 888 88 88</span>
-						    </div>
-					    </div>
+	    		
 					    <div class="col-md topper d-flex align-items-center justify-content-end">
 					    	<p class="mb-0">
 					    		
@@ -93,7 +51,7 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
-	      <form action="#" class="searchform order-lg-last">
+	      <form action="/recherche" method="GET" class="searchform order-lg-last">
           <div class="form-group d-flex">
             <input type="text" class="form-control pl-3" placeholder="Recherche">
             <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
@@ -102,10 +60,10 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item active"><a href={{route('accueil.index')}} class="nav-link pl-0">Accueil</a></li>
-	        	<li class="nav-item"><a href={{route('apropos.about')}} class="nav-link">A Propos</a></li>
+	        	<li class="nav-item"><a href={{route('admission')}} class="nav-link">Admission</a></li>
 	        	<li class="nav-item"><a href={{route('formation')}} class="nav-link">Formation</a></li>
 	        	<li class="nav-item"><a href={{route('Professeur')}} class="nav-link">Professeur</a></li>
-	        	<li class="nav-item"><a href={{route('Blog')}} class="nav-link">Blog</a></li>
+	        	<li class="nav-item"><a href={{route('Blog')}} class="nav-link">Etudiant</a></li>
 	          <li class="nav-item"><a href={{route('Contact')}} class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
@@ -144,7 +102,7 @@
 
 								
                            <div class="text pt-4">	
-							<h3><a href="#">La liste de nos enseignants</a></h3>
+							<h3><a href="#">La liste des enseignants</a></h3>
 							</div>
 
 
@@ -223,7 +181,7 @@
 								<div class="img align-self-stretch" style="background-image: url(images/teacher-14.jpg);"></div>
 							</div>
 							<div class="text pt-3 text-center">
-								<h3>Mme TOURE</h3>
+								<h3>Mme DIANKHA</h3>
 								<span class="position mb-2">Professeur de medecine </span>
 								<div class="faded">
 									<p>Je suis engagée pour donner le meilleur de moi-meme</moi-meme>.</p>
@@ -424,7 +382,7 @@
               <h2 class="ftco-heading-2">Liaison rapide</h2>
               <ul class="list-unstyled">
 			  <li><a href={{route('accueil.index')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Accueil</a></li>
-                <li><a href={{route('apropos.about')}}><span class="ion-ios-arrow-round-forward mr-2"></span>A Propos</a></li>
+                <li><a href={{route('admission')}}><span class="ion-ios-arrow-round-forward mr-2"></span>A Propos</a></li>
                 <li><a href={{route('Professeur')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Professeur</a></li>
                 <li><a href={{route('formation')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Formations</a></li>
                 <li><a href={{route('Contact')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
@@ -437,7 +395,8 @@
               <form action="#" class="subscribe-form">
                 <div class="form-group">
                   <input type="text" class="form-control mb-2 text-center" placeholder="Enter votre adresse email">
-                  <input type="submit" value="Subscribe" class="form-control submit px-3">
+                  <a href="/login" class="btn form-control submit px-3">Se connecter</a>
+                  
                 </div>
               </form>
             </div>
@@ -447,9 +406,9 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> Conçu. <i class="icon-heart" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank">Souleymane NGOM</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  
           </div>
         </div>
       </div>

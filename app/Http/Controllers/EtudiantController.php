@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\etudiant;
 use Illuminate\Http\Request;
 
 class EtudiantController extends Controller
@@ -13,10 +13,9 @@ class EtudiantController extends Controller
      */
     public function index()
     {
-        //
-        $students = \App\Students ::orderBy('created_at', 'DESC')->get();
-        return view('student.index', compact('students '));
-     
+        
+        $etudiants = \App\etudiant::orderBy('id', 'DESC')->get();
+        return view('Blog.etudiant', compact('etudiants'));
     }
 
     /**
@@ -26,8 +25,12 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        //
-        return view('student.create');
+
+         
+        $niveau = \App\niveau::pluck('id');       
+      return view('Blog.create',compact('niveau'));
+     
+
     }
 
     /**
@@ -38,15 +41,18 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $student = new Student();
-   $student->name = $request->input('nom');
-   $student->name= $request->input('prenom');
-   $student->name= $request->input('datedenaissance');
-   $student->name= $request->input('lieudenaissance');
-   $student->save();
-   return redirect('/');
-
+        $etudiant = new \App\etudiant();
+        $etudiant->prenom = $request->input('firtname');
+        $etudiant->nom = $request->input('name');
+        $etudiant->telephone = $request->input('number');
+        $etudiant->email= $request->input('E-mail');
+        $etudiant->niveauEtu = $request->input('level');
+        $etudiant->save();        
+        return redirect('/etudiant');
+     
+     
+     
+     
     }
 
     /**
@@ -57,7 +63,7 @@ class EtudiantController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +74,13 @@ class EtudiantController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        $etudiant = \App\etudiant::find($id);
+        $niveau = \App\niveau::pluck('licence1','licence2','licence3','master1','master2','id');
+
+   return view('Blog.edit', compact('etudiant','niveau'));
+
+
     }
 
     /**
@@ -80,8 +92,26 @@ class EtudiantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+       
+        $etudiant = \App\etudiant::find($id);
+        if($etudiant){
+            //dd($request->input('name'));
+            $etudiant->update([
+                'prenom' => $request->input('firtname'),
+                'nom' => $request->input('name'),
+                'telephone' => $request->input('number'),
+                'email' => $request->input('E-mail'),
+                'niveauEtu' => $request->input('level'),
+                
+                //'category_id' => $request->input('category_id'),
+            ]);
+        }
+        return redirect()->back();
+     
+
+
+     }
+     
 
     /**
      * Remove the specified resource from storage.
@@ -91,6 +121,12 @@ class EtudiantController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $etudiant = \App\etudiant::find($id);
+   if($etudiant)
+       $etudiant->delete();
+   return redirect()->route('etudiant');
+
+     }
+     
+    
 }
