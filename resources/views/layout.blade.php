@@ -36,7 +36,22 @@
     			<div class="col-md-4 d-flex align-items-center py-4">
     				<a class="navbar-brand" href="index.html">ESE<span>ECOLE</span></a>
     			</div>
-	    		
+	    		<div class="col-lg-8 d-block">
+		    		<div class="row d-flex">
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+					    	<div class="text">
+					    		<span>Email</span>
+						    	<span>eseexcellence@email.com</span>
+						    </div>
+					    </div>
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <div class="text">
+						    	<span>Appel</span>
+						    	<span>33 844 77 77</span>
+						    </div>
+					    </div>
 					    <div class="col-md topper d-flex align-items-center justify-content-end">
 					    	<p class="mb-0">
 					    		
@@ -64,7 +79,7 @@
 	        	<li class="nav-item"><a href="{{route('admission')}}" class="nav-link">Admission</a></li>
 	        	<li class="nav-item"><a href="{{route('formation')}}" class="nav-link">Formation</a></li>
 	        	<li class="nav-item"><a href="{{route('Professeur')}}" class="nav-link">Professeur</a></li>
-	        	<li class="nav-item"><a href="{{route('Blog')}} "class="nav-link">Etudiant</a></li>
+	        	<li class="nav-item"><a href="{{route('Blog')}}"class="nav-link">Etudiant</a></li>
 
 	          <li class="nav-item">
             <!------------------------------------------fomulair--------------->
@@ -153,7 +168,7 @@
                 <li><a href={{route('admission')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Admission</a></li>
                 <li><a href={{route('Professeur')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Professeur</a></li>
                 <li><a href={{route('formation')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Formations</a></li>
-                <li><a href={{route('Contact')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+                <li><a href={{route('Blog')}}><span class="ion-ios-arrow-round-forward mr-2"></span>Etudiant</a></li>
               </ul>
             </div>
           </div>

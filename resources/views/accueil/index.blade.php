@@ -90,7 +90,7 @@
 		            <div class="block-18">
 		            	<div class="icon"><span class="flaticon-doctor"></span></div>
 		              <div class="text">
-		                <strong class="number" data-number="50">100</strong>
+		                <strong class="number" data-number="50">0</strong>
 		                <span>Emplois</span>
 		              </div>
 		            </div>
